@@ -1,0 +1,113 @@
+.section {
+  padding: 28px 0;
+  overflow: hidden;
+  background-color: #282828;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.marqueeContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeContent {
+  display: flex;
+  width: fit-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marqueeContainer.paused .marqueeContent {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.marqueeItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 27px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.marqueeItem:hover {
+  transform: scale(1.05);
+}
+
+.logoIcon {
+  width: 132px;
+  height: 25px;
+  object-fit: contain;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.marqueeItem:hover .logoIcon {
+  filter: brightness(1.2);
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.marqueeItem:hover .logoText {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 15px 0;
+  }
+
+  .marqueeContent {
+    animation-duration: 25s;
+  }
+
+  .marqueeItem {
+    gap: 0.75rem;
+  }
+
+  .logoIcon {
+    width: 100px;
+    height: 25px;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .marqueeContent {
+    animation-duration: 20s;
+  }
+
+  .marqueeItem {
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .logoIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+}

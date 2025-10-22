@@ -1,0 +1,44 @@
+.section {
+  padding: 113px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.textItem {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.heading {
+  color: #474747;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 40px;
+  line-height: 45px;
+  letter-spacing: -1%;
+  padding: 0 120px;
+}
+
+.gradient {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .container {
+    gap: 3rem;
+  }
+  .heading {
+    padding: 0 30px;
+  }
+}

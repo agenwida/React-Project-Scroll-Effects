@@ -1,0 +1,197 @@
+.section {
+  padding-bottom: 147px;
+  background-color: #000;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: bold;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  gap: 1.5rem;
+}
+
+.gridItem {
+  position: relative;
+  border-radius: 1.5rem;
+  background-color: #0a0a0a;
+  border: 1px solid #1f1f1f;
+  padding: 2rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.gridItem:hover {
+  transform: translateY(-8px);
+  border-color: #333;
+  background-color: #232323;
+}
+
+.tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.wide {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.wide-tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.wide-tall-square {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.square {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.gridItem:hover .gradientBg {
+  opacity: 1;
+}
+
+.itemContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.gridItem:hover .logo {
+  transform: scale(1.05);
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  max-width: 280px;
+  max-height: 280px;
+  object-fit: contain;
+  filter: brightness(1);
+  transition: filter 0.3s ease;
+}
+
+.gridItem:hover .logoImage {
+  filter: brightness(1.2);
+}
+
+.itemTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 4%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #505050;
+  transition: all 0.5s ease;
+}
+
+.gridItem:hover .itemTitle {
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wide-tall {
+    grid-column: span 2;
+  }
+  .tall {
+    grid-column: span 1;
+  }
+  .wide {
+    grid-column: span 2;
+  }
+  .square {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-bottom: 4rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+
+  .wide-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .tall {
+    grid-column: span 3;
+  }
+  .wide {
+    grid-column: span 3;
+  }
+  .square {
+    grid-column: span 3;
+  }
+  .wide-tall-square {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .logoImage {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 180px;
+    gap: 1rem;
+  }
+
+  .tall,
+  .wide,
+  .wide-tall,
+  .square {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .logoImage {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
